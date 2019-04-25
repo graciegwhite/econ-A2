@@ -1,0 +1,57 @@
+---
+title: "Assignment 2"
+author: "Gracie White and Chase Brewster"
+date: "4/25/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r, echo=FALSE}
+library(tidyverse)
+
+
+gas <- read_csv("Gas_Data.csv")
+
+```
+This homework asks you to examine the possible distributional effects of a (mostly real)
+proposal to raise the gas tax in France. The overall questions are: (1) What will be the
+distributional effects of the tax increase? (2) How much revenue will be generated for
+infrastructure repairs? (3) By how much will environmental damage be reduced and who
+will benefit? (4) What is the role of electric vehicle demand?
+
+1. Consumers can be separated into two income groups: “High” and “Low”. The
+data set provides price (in $) and quantity (in gallons) estimates of demand per
+day for the two groups. Run regressions to estimate the demand curves for “High”
+and “Low” income consumers.
+2. Initially, there is no gas tax.
+3. The current gas price (without any taxes) is $5.00/gal.
+4. The marginal cost of producing a gallon of gasoline is linear and has priceintercept of 0. For the purposes of this exercise, you can assume that France is
+self-contained in supply and demand (you don’t need to worry about global
+markets).
+5. Consuming each gallon of gasoline creates an environmental and health
+externality in France of approximately $2.00.
+
+
+Your assignment is to walk through the following analyses and then draft a memo to
+President Macron advising him on the answers to the three questions posed at the top of
+this page. You can include a technical appendix with responses to these questions.
+
+1. What is the aggregate daily demand curve for gasoline in France? What is the
+supply curve for gasoline? What is the “benefit” to consumers under the status
+quo? What is the “benefit” to producers under the status quo? What is the
+environmental cost under the status quo?
+
+```{r}
+#problem 1: 
+
+#ok so first creating 2 linear models for each income group. 
+
+high_lm <- lm(Price_Dollars ~ Q_High_Gallons_per_Day, data = gas)
+
+
+```
+
