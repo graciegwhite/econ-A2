@@ -51,7 +51,33 @@ environmental cost under the status quo?
 #ok so first creating 2 linear models for each income group. 
 
 high_lm <- lm(Price_Dollars ~ Q_High_Gallons_per_Day, data = gas)
+high_lm
 
+high_intercept <- 23.3914418
+high_slope <- -0.0001297
+
+#high price = 23.3914418 + -0.0001297(Q)
+
+
+low_lm <- lm(Price_Dollars ~ Q_Low_Gallons_per_Day, data = gas)
+low_lm
+
+low_intercept = 21.9908534
+low_slope = -0.0001355
+
+#low price = 21.9908534 + -0.0001355(Q)
+
+#aggregate price, solved both equations for q, then added 
+
+# DEMAND CURVE
+#Qag = 342644.4818 - 15090.2P
+
+Qag_intercept <- 342644.4818
+Qag_slope <- -15090.2
+
+#Demand Curve Plot
+eq <- function(x){342644.4818 - 15090.2*x}
+plot(eq(0:35000), type = 'l')
 
 ```
 
