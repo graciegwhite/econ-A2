@@ -72,12 +72,47 @@ low_slope = -0.0001355
 # DEMAND CURVE
 #Qag = 342644.4818 - 15090.2P
 
-Qag_intercept <- 342644.4818
-Qag_slope <- -15090.2
+Qag_intercept <- 22.70641416
+Qag_slope <- -0.000066268
 
 #Demand Curve Plot
-eq <- function(x){342644.4818 - 15090.2*x}
+eq.1 <- function(x){22.70641416 - 0.000066268*x}
 plot(eq(0:35000), type = 'l')
+
+
+#Supply Curve
+
+# supply cost = 5(q)
+
+sup_eq <- function(x){0.000018713*x}
+plot(sup_eq(0:35000), type = 'l')
+
+
+high_demand <- function(x){23.3914418 + -0.0001297*x}
+
+income_groups_plot <- ggplot(gas, aes(y = Price_Dollars)) +
+  geom_line(aes(x = Q_High_Gallons_per_Day), color = "red") +
+  geom_line(aes(x = Q_Low_Gallons_per_Day))
+
+income_groups_plot
+
+
+funtion_plot <- ggplot(data = data.frame(x=0),mapping = aes(x = x)) +
+  stat_function(fun = eq.1) +
+  stat_function(fun = sup_eq) + 
+  xlim(-1, 350000) +
+  scale_x_continuous(labels = comma)
+  
+  
+funtion_plot
+
+
+
+#Free market Eq
+# Q = 267194.1836
+# slope = 0.000018713
+
+#supply curve = 0.000018713(Q)
 
 ```
 
