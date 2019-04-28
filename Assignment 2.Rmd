@@ -190,10 +190,10 @@ Finally, assume that electric cars will gain popularity and that in the future t
 will lower the demand curves of all income groups by half (vertically). Under
 these new demand curves, what are the effects on:
 a. Gas consumption by “High” income consumers
-78,805.2 gallons
+70,886.26 gallons
 
 b. Gas consumption by “Low” income consumers
-71,300.3 gallons
+62,683.79 gallons
 
 c. Gas price
 aggregate demand = 11.35319611 - 0.000066268Q
