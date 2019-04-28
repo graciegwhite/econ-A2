@@ -108,7 +108,7 @@ funtion_plot <- ggplot(data = data.frame(x=0),mapping = aes(x = x)) +
  
   
 funtion_plot
-ggsave("statusquo.png", width = 10, height = 8)
+ggsave("statusquo.png")
 
 
 #Free market Eq
@@ -177,7 +177,7 @@ tax_plot <- ggplot(data = data.frame(x=0),mapping = aes(x = x)) +
   scale_colour_manual("Curves", values = c("red", "blue")) +
   labs(title = "$0.50 Gas Tax: Supply and Demand", y = "Price", x = "Gallons of Gasoline")
 tax_plot
-ggsave("tax.png", width = 10, height = 8)
+ggsave("tax.png")
 
 
   
@@ -190,10 +190,10 @@ Finally, assume that electric cars will gain popularity and that in the future t
 will lower the demand curves of all income groups by half (vertically). Under
 these new demand curves, what are the effects on:
 a. Gas consumption by “High” income consumers
-78,805.2 gallons
+88,773.8 gallons
 
 b. Gas consumption by “Low” income consumers
-71,300.3 gallons
+70,973.3 gallons
 
 c. Gas price
 aggregate demand = 11.35319611 - 0.000066268Q
