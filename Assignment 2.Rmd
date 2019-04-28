@@ -71,7 +71,7 @@ low_slope = -0.0001355
 #aggregate price, solved both equations for q, then added 
 
 # DEMAND CURVE
-#Qag = 342644.4818 - 15090.2P
+
 
 Qag_intercept <- 22.70642416
 Qag_slope <- -0.000066268
@@ -99,14 +99,16 @@ income_groups_plot
 
 
 funtion_plot <- ggplot(data = data.frame(x=0),mapping = aes(x = x)) +
-  stat_function(fun = eq.1) +
-  stat_function(fun = sup_eq) + 
+  stat_function(fun = eq.1, aes(color = "Demand")) +
+  stat_function(fun = sup_eq, aes(color = "Supply")) + 
   xlim(-1, 350000) +
-  theme_bw()
+  theme_bw() +
+  scale_colour_manual("Curves", values = c("red", "blue")) +
+  labs(title = "Status Quo: Supply and Demand", y = "Price", x = "Gallons of Gasoline")
  
   
 funtion_plot
-
+ggsave("statusquo.png", width = 10, height = 8)
 
 
 #Free market Eq
@@ -168,14 +170,17 @@ fun_msc <- function(x){}
 
 
 tax_plot <- ggplot(data = data.frame(x=0),mapping = aes(x = x)) +
-  stat_function(fun = eq.1) +
-  stat_function(fun = fun_tax) + 
+  stat_function(fun = eq.1, aes(color = "Demand")) +
+  stat_function(fun = fun_tax, aes(color = "Supply")) + 
   xlim(-1, 350000) +
-  theme_bw()
- 
-  
+  theme_bw() +
+  scale_colour_manual("Curves", values = c("red", "blue")) +
+  labs(title = "$0.50 Gas Tax: Supply and Demand", y = "Price", x = "Gallons of Gasoline")
 tax_plot
+ggsave("tax.png", width = 10, height = 8)
 
+
+  
 ```
 4. in excel
 
